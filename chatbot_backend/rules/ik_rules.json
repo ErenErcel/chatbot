@@ -1,0 +1,42 @@
+[
+  {
+    "keywords": ["izin", "ne"],
+    "response": "Yıllık izin süreniz 14 gündür."
+  },
+  {
+    "keywords": ["maaş", "ne"],
+    "response": "Maaş bilgilerinize İK portalından ulaşabilirsiniz."
+  },
+  {
+    "keywords": ["sigorta"],
+    "response": "Sigortanız işe giriş tarihiniz itibariyle başlar."
+  },
+  {
+    "keywords": ["çalışma", "saat"],
+    "response": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır."
+  },
+  {
+    "keywords": ["mesai"],
+    "response": "Fazla mesai ücreti %50 zamlı olarak ödenir."
+  },
+  {
+    "keywords": ["prim"],
+    "response": "Prim ödemeleri performansa dayalı yapılır."
+  },
+  {
+    "keywords": ["tatil"],
+    "response": "Resmi tatillerde çalışılmaz."
+  },
+  {
+    "keywords": ["rapor"],
+    "response": "Raporlu günlerde maaş kesintisi olmaz."
+  },
+  {
+    "keywords": ["sözleşme"],
+    "response": "İş sözleşmeniz belirsiz süreli olarak düzenlenmiştir."
+  },
+  {
+    "keywords": ["ihbar"],
+    "response": "İhbar süresi 2 haftadır."
+  }
+]
