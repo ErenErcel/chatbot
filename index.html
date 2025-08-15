@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <!-- Bu sayfa, şirket içi chatbot arayüzünü sunar: mesajlaşma, SSS, puanlama -->
+  <!-- Bootstrap 5 (stil ve grid sistemi için) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Tema renkleri ve temel görsel değişkenler */
+    :root{
+      --bg: #0b0f13;
+      --card: #11161c;
+      --soft: #1b242d;
+      --text: #e9eef4;
+      --muted: #9fb0c0;
+      --accent: #4da3ff;
+      --user: #1f6feb;
+      --bot: #2b825b;
+    }
+    /* Arka plan ve metin rengi */
+    body{background: linear-gradient(180deg, #0a0f14 0%, #0b1116 100%); color: var(--text);} 
+    .app{max-width: 900px; margin: 40px auto;}
+    /* Cam efekti kart (ana kap) */
+    .glass{background: rgba(17, 22, 28, 0.75); backdrop-filter: blur(8px); border: 1px solid #1e2630; border-radius: 16px;}
+    /* Üst başlık alanı */
+    .chat-header{border-bottom: 1px solid #1e2630;}
+    .chat-title{font-weight: 600; letter-spacing: .3px;}
+    /* Mesaj listesi ve baloncuklar */
+    .message-list{height: 56vh; overflow-y: auto; padding: 20px;}
+    .msg{display: flex; gap: 12px; margin-bottom: 14px;}
+    .msg .bubble{max-width: 75%; padding: 12px 14px; border-radius: 14px; line-height: 1.4; font-size: 14.5px;}
+    .msg.user .bubble{background: rgba(31,111,235,.15); border: 1px solid rgba(31,111,235,.35);} 
+    .msg.bot .bubble{background: rgba(43,130,91,.16); border: 1px solid rgba(43,130,91,.35);} 
+    /* Avatar (kullanıcı/bot simgesi) */
+    .avatar{
+      width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+      overflow: hidden; background: rgba(255,255,255,.06); border: 1px solid #223043;
+    }
+    .avatar img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar svg{ width: 22px; height: 22px; }
+    .avatar.user{background: var(--user);} .avatar.bot{background: var(--bot);} 
+    /* Giriş çubuğu ve metin alanı */
+    .input-bar{border-top: 1px solid #1e2630;}
+    textarea{resize: none;}
+    /* SSS (FAQ) link ve buton stilleri */
+    .faq a{color: var(--accent); text-decoration: none;} .faq a:hover{text-decoration: underline;}
+    .faq-grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px;}
+    .faq-btn{
+      width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #1e2630;
+      background: linear-gradient(180deg, #0f151c 0%, #0c1218 100%);
+      color: var(--text); text-align: left; font-size: 14px; line-height: 1.3;
+      transition: transform .08s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor: pointer;
+    }
+    .faq-btn:hover{ transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.25); border-color: #2a3543; }
+    .faq-btn:active{ transform: translateY(0); box-shadow: none; }
+    @media (max-width: 420px){ .faq-grid{grid-template-columns: 1fr;} }
+    /* Puanlama yıldızları ve rozet/pil stili */
+    .rating .star{font-size: 22px; cursor: pointer; color: #9aa9b7;} .rating .star.selected{color: #ffd166;}
+    .pill{background: #10161d; border: 1px solid #1e2630; padding: 6px 10px; border-radius: 999px; color: var(--muted); font-size: 12.5px;}
+    .status{color: var(--muted); font-size: 13px;}
+    /* Uyarı kutusu (kısıtlı/yasak konu vb.) */
+    .warning{background: rgba(255,193,7,.1); border: 1px solid rgba(255,193,7,.35); color: #ffda6a; border-radius: 10px; padding: 10px;}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="glass">
+      <!-- Başlık ve kontrol butonları -->
+      <div class="p-3 d-flex justify-content-between align-items-center chat-header">
+        <div>
+          <div class="chat-title">Şirket Asistanı</div>
+          <div class="status">Merhaba! Sorunu yaz, ben yardımcı olayım.</div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="pill" id="modePill">✨ Modern Tema</span>
+          <button id="endChatBtn" class="btn btn-outline-warning btn-sm">Konuşmayı Bitir</button>
+          <button id="restartChatBtn" class="btn btn-success btn-sm" style="display:none;">Konuşmayı Başlat</button>
+        </div>
+      </div>
+
+      <!-- SSS / Hızlı Öneriler -->
+      <div id="faqBox" class="p-3 border-bottom faq">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong>Sık Sorulan Sorular</strong>
+          <small class="text-secondary">Tıkla ve gönder</small>
+        </div>
+        <div id="faqGrid" class="faq-grid"></div>
+      </div>
+
+      <!-- Mesaj listesi -->
+      <div class="message-list" id="response"></div>
+
+      <!-- Puanlama -->
+      <div id="ratingBox" class="p-3 rating" style="display:none;">
+        <div class="fw-semibold mb-2">Bu konuşmayı puanla:</div>
+        <span class="star" data-v="1">★</span>
+        <span class="star" data-v="2">★</span>
+        <span class="star" data-v="3">★</span>
+        <span class="star" data-v="4">★</span>
+        <span class="star" data-v="5">★</span>
+        <span id="rateMsg" class="ms-2 text-secondary"></span>
+      </div>
+
+      <!-- Giriş Çubuğu -->
+      <div class="input-bar p-3">
+        <div class="row g-2 align-items-end" id="chatBox">
+          <div class="col-12 col-md-9">
+            <textarea id="userInput" rows="3" class="form-control" placeholder="Mesajını yaz... (Enter: Gönder, Shift+Enter: Satır)"></textarea>
+          </div>
+          <div class="col-12 col-md-3 d-grid d-md-flex gap-2">
+            <button id="sendBtn" type="button" class="btn btn-primary flex-fill">Gönder</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (opsiyonel – odak/erişilebilirlik için) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // --- Durum değişkenleri (gönderim & oturum) ---
+    let isSending = false;
+    let isChatActive = true;
+
+    // --- Sık kullanılan DOM referansları ---
+    const sendBtn   = document.getElementById("sendBtn");
+    const inputEl   = document.getElementById("userInput");
+    const restartBtn= document.getElementById("restartChatBtn");
+    const ratingBox = document.getElementById("ratingBox");
+    const rateMsg   = document.getElementById("rateMsg");
+    const modePill  = document.getElementById("modePill");
+    const stars     = () => document.querySelectorAll('#ratingBox .star');  // Yıldızları canlı seç
+    let ratingLocked = false;
+
+    // İsteğe bağlı: özel avatar görselleri (boş bırakılırsa yerleşik ikonlar kullanılır)
+    const USER_AVATAR_URL = ""; // örn. "./assets/user.jpg"
+    const BOT_AVATAR_URL  = ""; // örn. "./assets/bot.png"
+
+    function createAvatar(role){  // Avatar HTML'ini üretir (resim varsa resim, yoksa SVG)
+      const avatar = document.createElement('div');
+      avatar.className = `avatar ${role}`;
+      const url = role === 'user' ? USER_AVATAR_URL : BOT_AVATAR_URL;
+      if (url) {
+        const img = document.createElement('img');
+        img.src = url; img.alt = role === 'user' ? 'user' : 'bot';
+        avatar.appendChild(img);
+      } else {
+        // Dahili SVG ikonlar (kullanıcı=kişi, bot=robot)
+        avatar.innerHTML = role === 'user'
+          ? `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5z"/></svg>`
+          : `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 0 1 1 1v1h3a1 1 0 0 1 0 2h-1v2.09A6 6 0 0 1 19 14v5a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-5a6 6 0 0 1 4-5.91V6H8a1 1 0 0 1 0-2h3V3a1 1 0 0 1 1-1zm-4 11a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm8 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>`;
+      }
+      return avatar;
+    }
+
+    function pushMessage(role, html){  // Mesaj balonunu sohbet listesine ekler
+      const list = document.getElementById('response');
+      const wrap = document.createElement('div');
+      wrap.className = `msg ${role}`;
+      const avatar = createAvatar(role);
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.innerHTML = html;
+      wrap.appendChild(avatar); 
+      wrap.appendChild(bubble);
+      list.appendChild(wrap);
+      list.scrollTop = list.scrollHeight;
+    }
+
+    function sendMessage() {  // Kullanıcı mesajını API'ye gönderir, yanıtları ekrana basar
+      if (!isChatActive) return;
+      if (isSending) return;
+      isSending = true;
+
+      const msg = inputEl.value.trim();
+      if (!msg){ isSending = false; return; }
+
+      pushMessage('user', msg);
+      pushMessage('bot', '🤔 Düşünüyorum...');
+
+      const prevLabel = sendBtn.textContent;
+      sendBtn.disabled = true; 
+      sendBtn.textContent = 'Gönderiliyor…';
+
+      fetch("http://127.0.0.1:8000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: msg })
+      })
+      .then(async res => {
+        const contentType = res.headers.get("content-type") || "";
+        if (!res.ok || !contentType.includes("application/json")) {
+          const text = await res.text();
+          throw new Error("Sunucudan geçerli JSON alınamadı: " + text);
+        }
+        return res.json();
+      })
+      .then(data => {
+        const list = document.getElementById('response');
+        // Son bot yer tutucusunu kaldır
+        const placeholders = list.querySelectorAll('.msg.bot .bubble');
+        if (placeholders.length) {
+          placeholders[placeholders.length-1].parentElement.remove();
+        }
+
+        if (data.rule_based) {
+          pushMessage('bot', `🎯 <strong>Rule-based cevap</strong><br>${data.rule_based}`);
+        }
+        if (data.llm) {
+          pushMessage('bot', `🤖 <strong>LLM cevabı</strong><br>${data.llm}`);
+        }
+        const isWarning = (data.final_answer || '').includes('Bu konuda yardımcı olamıyorum');
+        const finalHtml = isWarning
+          ? `<div class="warning"><strong>✅ Gösterilen cevap:</strong><br>${data.final_answer}</div>`
+          : `<strong>✅ Gösterilen cevap:</strong><br>${data.final_answer}`;
+        pushMessage('bot', finalHtml);
+        inputEl.value = '';
+      })
+      .catch(err => {
+        pushMessage('bot', `<span class="text-warning">🛑 Sunucudan yanıt alınamadı.</span>`);
+        console.error(err);
+      })
+      .finally(() => {
+        isSending = false;
+        sendBtn.disabled = false; 
+        sendBtn.textContent = prevLabel || 'Gönder';
+        inputEl.focus();
+      });
+    }
+
+    // Butondan gönderim
+    document.getElementById("sendBtn").addEventListener("click", e => {  // Gönder butonu tıklanınca mesajı yolla
+      e.preventDefault(); 
+      sendMessage();
+    });
+
+    // Konuşmayı bitir
+    document.getElementById("endChatBtn").addEventListener("click", async e => {  // Oturumu kapatır ve puanlamayı açar
+      e.preventDefault();
+      try {
+        await fetch('http://127.0.0.1:8000/session/reset', { method: 'POST' });
+      } catch (err) {
+        console.warn('Session reset çağrısı başarısız:', err);
+      }
+      isChatActive = false; 
+      ratingBox.style.display = 'block';
+      pushMessage('bot', '<span class="text-secondary">🔒 Konuşma sona erdi. Bot devre dışı (hafıza temizlendi).</span>');
+      restartBtn.style.display = 'inline-block';
+    });
+
+    // Konuşmayı yeniden başlat
+    restartBtn.addEventListener("click", () => {  // Puanlamayı gizler ve yeni konuşma başlatır
+      isChatActive = true; 
+      ratingBox.style.display = 'none';
+      ratingLocked = false; 
+      rateMsg.textContent = '';
+      stars().forEach(s => { s.classList.remove('selected'); s.style.pointerEvents = 'auto'; });
+      pushMessage('bot', '<span class="text-success">✅ Bot yeniden aktifleştirildi.</span>');
+      restartBtn.style.display = 'none';
+    });
+
+    function sendRating(value){  // Puanı API'ye beacon/fetch ile gönderir
+      const payload = JSON.stringify({ rating: value });
+      if (navigator.sendBeacon) {
+        const blob = new Blob([payload], { type: 'application/json' });
+        return navigator.sendBeacon('http://127.0.0.1:8000/rate', blob);
+      }
+      fetch('http://127.0.0.1:8000/rate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload }).catch(()=>{});
+      return true;
+    }
+
+    function wireStars(){  // Yıldız puanlama butonlarını etkinleştirir
+      stars().forEach((s) => {
+        s.onclick = () => {
+          if (ratingLocked) return;
+          const v = Number(s.dataset.v);
+          if (!Number.isInteger(v) || v < 1 || v > 5) return;
+          stars().forEach(x => x.classList.remove('selected'));
+          for (let i=0; i<v; i++) stars()[i].classList.add('selected');
+          const ok = sendRating(v);
+          ratingLocked = true; 
+          rateMsg.textContent = ok ? `Teşekkürler! ${v} yıldız verdiniz.` : 'Gönderilemedi.';
+          stars().forEach(x => x.style.pointerEvents = 'none');
+        };
+      });
+    }
+    wireStars();
+
+    // SSS örnekleri
+    const sampleQuestions = [
+      "Yıllık izin sürem ne kadar?",
+      "Maaşımı nereden öğrenebilirim?",
+      "Sigortam ne zaman başlar?",
+      "Çalışma saatleri nedir?",
+      "Prim ödemesi alıyor muyum?",
+      "Doğum izni kaç hafta?",
+      "Babalık izni kaç gün?",
+      "Evlilik izni kaç gün?",
+      "Yemek kartı ne zaman yüklenir?",
+      "Servis var mı?"
+    ];
+    // Daha düzenli görünüm için alfabetik sırala
+    const sortedQuestions = [...sampleQuestions].sort((a,b)=> a.localeCompare(b, 'tr'));
+    const faqGrid = document.getElementById("faqGrid");
+    sortedQuestions.forEach(q => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'faq-btn';
+      btn.textContent = q;
+      btn.onclick = () => { inputEl.value = q; sendMessage(); };  // Butona tıklayınca soruyu gönder
+      faqGrid.appendChild(btn);
+    });
+
+    // Enter / Shift+Enter davranışı (Enter: gönder, Shift+Enter: satır sonu)
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        if (e.shiftKey) return; // Satır sonu ekle
+        e.preventDefault(); 
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>
