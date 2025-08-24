@@ -1,0 +1,135 @@
+[
+  {
+    "intent": "izin_suresi",
+    "keywords": ["izin", "yıllık izin", "izin süresi", "gün", "tatil"],
+    "response": "Yıllık izin süreniz 14 gündür.",
+    "tags": ["izin", "ne", "yıllık izin", "izin süresi"],
+    "priority": 1
+  },
+  {
+    "intent": "maas_bilgisi",
+    "keywords": ["maaş", "ücret", "maaşım", "maaşlar", "maaş bilgisi", "maaşımı öğrenmek istiyorum"],
+    "response": "Maaş bilgilerinize İK portalından ulaşabilirsiniz.",
+    "tags": ["maaş", "ne", "ücret", "ödeme"],
+    "priority": 1
+  },
+  {
+    "intent": "sigorta_bilgisi",
+    "keywords": ["sigorta", "sgk", "sosyal güvenlik", "sigortam", "sigorta başlangıcı", "başladı"],
+    "response": "Sigortanız işe giriş tarihiniz itibariyle başlar.",
+    "tags": ["sigorta", "işe giriş", "sosyal güvenlik"],
+    "priority": 1
+  },
+  {
+    "intent": "calisma_saatleri",
+    "keywords": ["çalışma", "saat", "çalışma saatleri", "mesai", "başlama", "bitiş", "iş saati", "saat kaçta", "giriş", "çıkış"],
+    "response": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır.",
+    "tags": ["çalışma", "saat", "mesai", "iş saatleri"],
+    "priority": 1
+  },
+  {
+    "intent": "mesai_ucreti",
+    "keywords": ["mesai", "fazla mesai", "ek mesai", "mesai ücreti", "ödeme", "ek ücret"],
+    "response": "Fazla mesai ücreti %50 zamlı olarak ödenir.",
+    "tags": ["mesai", "fazla mesai", "ücret", "zam"],
+    "priority": 1
+  },
+  {
+    "intent": "prim_odemeleri",
+    "keywords": ["prim", "ödül", "ek ödeme", "prim ödemesi", "primler", "prim var mı"],
+    "response": "Prim ödemeleri performansa dayalı yapılır.",
+    "tags": ["prim", "ödeme", "performans"],
+    "priority": 1
+  },
+  {
+    "intent": "resmi_tatil",
+    "keywords": ["tatil", "resmi tatil", "bayram", "izin", "tatil var mı", "tatil günleri"],
+    "response": "Resmi tatillerde çalışılmaz.",
+    "tags": ["tatil", "resmi tatil", "çalışma"],
+    "priority": 1
+  },
+  {
+    "intent": "rapor_mesai",
+    "keywords": ["rapor", "raporlu", "rapor günleri", "rapor alınca", "rapor maaş", "rapor ne olur", "raporda"],
+    "response": "Raporlu günlerde maaş kesintisi olmaz.",
+    "tags": ["rapor", "maaş", "kesinti", "izin"],
+    "priority": 1
+  },
+  {
+    "intent": "sozlesme_bilgisi",
+    "keywords": ["sözleşme", "iş sözleşmesi", "anlaşma", "kontrat", "sözleşmem", "sözleşme türü", "sözleşme nasıl"],
+    "response": "İş sözleşmeniz 20 iş günü olarak düzenlenmiştir.",
+    "tags": ["sözleşme", "iş sözleşmesi", "belirsiz süre"],
+    "priority": 1
+  },
+  {
+    "intent": "ihbar_suresi",
+    "keywords": ["ihbar", "ihbar süresi", "ihbar bildirimi", "ihbar nedir"],
+    "response": "İhbar süresi 2 haftadır.",
+    "tags": ["ihbar", "ihbar süresi", "bildirim"],
+    "priority": 1
+  },
+  {
+    "intent": "yemek_karti",
+    "keywords": ["yemek", "kartı", "yemek kartı", "yemek ücreti", "yemek hakkı", "kart bakiyesi", "yemek parası"],
+    "response": "Yemek kartı bakiyesi aylık olarak yüklenir ve dışarıda kullanılabilir.",
+    "tags": ["yemek", "kartı", "bakiye", "ödeme aracı"],
+    "priority": 1
+  },
+  {
+    "intent": "servis_hizmeti",
+    "keywords": ["servis", "servis hizmeti", "servis var mı", "ulaşım", "servis aracı", "şirket servisi", "yol yardımı"],
+    "response": "Şirketimizde servis hizmeti bulunmamaktadır. Ulaşım ücreti yol yardımı olarak ödenir.",
+    "tags": ["servis", "ulaşım", "yol yardımı", "hizmet"],
+    "priority": 1
+  },
+  {
+    "intent": "dogum_izni",
+    "keywords": ["doğum", "izni", "doğum izni", "doğum hakkı", "hamilelik izni", "kadın izin"],
+    "response": "Kadın çalışanlar için doğum izni 16 haftadır (8 hafta doğum öncesi, 8 hafta sonrası).",
+    "tags": ["doğum", "izin", "doğum izni", "kadın çalışan"],
+    "priority": 1
+  },
+  {
+    "intent": "babalik_izni",
+    "keywords": ["babalık", "izni", "babalık izni", "baba izni", "babalık hakkı"],
+    "response": "Babalık izni 5 gündür.",
+    "tags": ["babalık", "izin", "babalık izni"],
+    "priority": 1
+  },
+  {
+    "intent": "evlilik_izni",
+    "keywords": ["evlilik", "izni", "evlilik izni", "evlenme izni", "evlilik hakkı"],
+    "response": "Evlilik izni 3 gündür ve evlilik tarihinden itibaren kullanılmalıdır.",
+    "tags": ["evlilik", "izin", "evlilik izni"],
+    "priority": 1
+  },
+  {
+    "intent": "olum_izni",
+    "keywords": ["ölüm", "izni", "vefat izni", "yakın vefatı", "taziye izni", "ölüm hakkı"],
+    "response": "Birinci derece yakınların vefatında 3 gün ücretli izin verilir.",
+    "tags": ["ölüm", "izin", "ücretli izin", "vefat"],
+    "priority": 1
+  },
+  {
+    "intent": "yol_yardimi",
+    "keywords": ["yol", "yardımı", "yol yardımı", "ulaşım desteği", "yol parası", "yol ücreti", "ulaşım"],
+    "response": "Ulaşım desteği aylık olarak maaşa eklenir.",
+    "tags": ["yol", "yardımı", "ulaşım", "destek"],
+    "priority": 1
+  },
+  {
+    "intent": "kıyafet_kurallari",
+    "keywords": ["kıyafet", "giyim", "kıyafet kuralları", "ne giyilir", "ofis giyim", "kıyafet yönetmeliği"],
+    "response": "Ofis içinde iş yerinin belirlediği kurallara uygun kıyafet giyilmesi beklenir.",
+    "tags": ["kıyafet", "kurallar", "ofis", "giyim"],
+    "priority": 1
+  },
+  {
+    "intent": "performans_degerlendirme",
+    "keywords": ["performans", "değerlendirme", "performans değerlendirmesi", "performans ölçümü", "değerlendirme süreci"],
+    "response": "Performans değerlendirmeleri yılda iki kez yapılır ve prim ödemelerine etki eder.",
+    "tags": ["performans", "değerlendirme", "prim", "ödeme"],
+    "priority": 1
+  }
+]

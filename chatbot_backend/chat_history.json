@@ -1,0 +1,660 @@
+[
+  {
+    "ts": 1754837625,
+    "question": "Benim masa kırmızı",
+    "answer": "[HATA] NLP işleme başarısız: 'NoneType' object has no attribute 'lower'",
+    "intent": null,
+    "source": null
+  },
+  {
+    "ts": 1754837637,
+    "question": "Benim duvar",
+    "answer": "Telefon bilgilerinize İK portalından ulaşabilirsiniz.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837642,
+    "question": "Ne alakası var?",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837653,
+    "question": "Sanat sever misin",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837661,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "Eren",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837665,
+    "question": "Sanat sever misin",
+    "answer": "Evet.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837671,
+    "question": "En sevdiğin sanatçı kim",
+    "answer": "Vincent van Gogh.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837674,
+    "question": "Tamam",
+    "answer": "Tamam.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837680,
+    "question": "Yardımcı ol bana",
+    "answer": "Evet.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837686,
+    "question": "Senin en sevdiğin sanatçı kimdi",
+    "answer": "Vincent van Gogh.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837691,
+    "question": "Benim de davinci",
+    "answer": "Leonardo da Vinci.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837693,
+    "question": "Evet",
+    "answer": "Evet.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837698,
+    "question": "Benim en sevdiğim sanatçı kimdi",
+    "answer": "Vincent van Gogh.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837701,
+    "question": "Yok benim",
+    "answer": "Vincent van Gogh.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837704,
+    "question": "davinci",
+    "answer": "Leonardo da Vinci.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837708,
+    "question": "OK",
+    "answer": "Leonardo da Vinci.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837709,
+    "question": "Bok",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837712,
+    "question": "hahaha",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837732,
+    "question": "Naber",
+    "answer": "Merhaba! Sana nasıl yardımcı olabilirim?",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837739,
+    "question": "Spor sever misin",
+    "answer": "Evet.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837741,
+    "question": "Benim adım ne",
+    "answer": "ne",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837747,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "ne",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837758,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "ne",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837871,
+    "question": "Benim adım eren",
+    "answer": "Anlaşıldı.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837880,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "Henüz adını kaydetmemişim gibi görünüyor. İstersen 'Benim adım X' diyebilirsin.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837886,
+    "question": "Tamam teşekkürler görüşürüz",
+    "answer": "Rica ederim, görüşürüz.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837890,
+    "question": "Benim adım eren",
+    "answer": "Rica ederim, görüşürüz.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837898,
+    "question": "Şimdi bana spordan bahset",
+    "answer": "Spor, fiziksel aktivite ve egzersizi içeren birçok farklı disiplini kapsar.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837904,
+    "question": "Benim adım hatırlıyor musun",
+    "answer": "hatırlıyor",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837913,
+    "question": "Spor nasıl bir şeydir sence",
+    "answer": "Fiziksel aktivite ve egzersizi içeren birçok disiplini kapsar.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837917,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "hatırlıyor",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837924,
+    "question": "Çok sıkıldım napalım",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837927,
+    "question": "Sıkıldım",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837934,
+    "question": "Çok içim karardı",
+    "answer": "Bu konuda yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837938,
+    "question": "Niye",
+    "answer": "Bu konu hakkında yardımcı olamıyorum.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837946,
+    "question": "Senin adın gemma mı?",
+    "answer": "Hatırlıyor.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837956,
+    "question": "Doğum izni kaç hafta?",
+    "answer": "Kadın çalışanlar için doğum izni 16 haftadır (8 hafta doğum öncesi, 8 hafta sonrası). İK süreçlerine dair adımlar için İK portalını kullanabilirsiniz: [Portal Linki].",
+    "intent": "dogum_izni",
+    "source": "llm"
+  },
+  {
+    "ts": 1754837969,
+    "question": "Benim adımı hatırlıyor musun?",
+    "answer": "Henüz adını kaydetmemişim gibi görünüyor. İstersen 'Benim adım X' diyebilirsin.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754837975,
+    "question": "Tamam görüşürüz",
+    "answer": "Buna karşılık, \"Görüşürüz.\"",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859486,
+    "question": "Merhaba nasılsın?",
+    "answer": "Merhaba! Yardımcı olabilirim, neye ihtiyacın var?",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859507,
+    "question": "Stajımın bitmesine kaç gün kaldı",
+    "answer": "Yıllık izin süreniz 14 gündür. Detaylar için İK portalına [Portal Linki] üzerinden ulaşabilirsiniz.",
+    "intent": "izin_suresi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754859521,
+    "question": "Benim adım pelin senin adın ne?",
+    "answer": "Ben bir yapay zeka modeliyim, adım yok.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859527,
+    "question": "Adın şerro olsun",
+    "answer": "Ben bir yapay zeka modeliyim, adım yok.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859535,
+    "question": "Adın gemma",
+    "answer": "Ben bir yapay zeka modeliyim, adım yok.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859544,
+    "question": "Benim adımı biliyor musun",
+    "answer": "Ben bir yapay zeka modeliyim, adımı bilmem gerekmiyor.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859553,
+    "question": "Benim adım pelin",
+    "answer": "Ben bir yapay zeka modeliyim, adımı bilmem gerekmiyor.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754859565,
+    "question": "Maaşımı nereden öğrenebilirim?",
+    "answer": "Maaş bilgilerinize İK portalından ulaşabilirsiniz.",
+    "intent": "maas_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754859585,
+    "question": "Bdıe",
+    "answer": "Ben bir yapay zeka modeliyim, adımı bilmem gerekmiyor.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943346,
+    "question": "selam",
+    "answer": "Merhaba! Size nasıl yardımcı olabilirim?",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943353,
+    "question": "Benim adım eren senin adın ne",
+    "answer": "Ben bir yapay zeka modeliyim, isim yok.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943363,
+    "question": "İsmini ben sana vereyim mi",
+    "answer": "Evet, verebilirsiniz.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943369,
+    "question": "Senin adın gemma",
+    "answer": "Tamam, senin adın Gemma.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943375,
+    "question": "Benim adımı hatırlıyor musun",
+    "answer": "eren",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943382,
+    "question": "Kendi adını hatırlıyor usun",
+    "answer": "Evet, senin adın Gemma.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943392,
+    "question": "5 kere 5 kaç eder",
+    "answer": "25",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943402,
+    "question": "Benim yaşım 25",
+    "answer": "Harika!",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943414,
+    "question": "Benim adım ve yaşım kaç?",
+    "answer": "Senin adın Eren, yaşın 25.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943418,
+    "question": "Bravo sana",
+    "answer": "Teşekkürler.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943576,
+    "question": "Yıllık izin sürem ne kadar?",
+    "answer": "Yıllık izin süreniz 14 gündür. Hesabınızla İK portalına [Portal Linki] yoluyla giriş yapıp ilgili bilgileri kontrol edebilirsiniz.",
+    "intent": "izin_suresi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754943587,
+    "question": "Evlilik izni kaç gün?",
+    "answer": "Evlilik izni 3 gündür ve evlilik tarihinden itibaren kullanılmalıdır.\nİK süreçlerine dair adımlar için İK portalını kullanabilirsiniz: [Portal Linki].",
+    "intent": "evlilik_izni",
+    "source": "llm"
+  },
+  {
+    "ts": 1754943611,
+    "question": "Çalışma saatleri nedir?",
+    "answer": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır. İK portalı ([Portal Linki]) üzerinden kişisel kayıtlarınızı görüntüleyebilirsiniz.",
+    "intent": "calisma_saatleri",
+    "source": "llm"
+  },
+  {
+    "ts": 1754943663,
+    "question": "Benim adım eren",
+    "answer": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır.\n",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943667,
+    "question": "Benim adım ne",
+    "answer": "ne",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943672,
+    "question": "Benim adım eren",
+    "answer": "ne",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943682,
+    "question": "Selam",
+    "answer": "Merhaba! Sana nasıl yardımcı olabilirim?",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943689,
+    "question": "Benim adım eren",
+    "answer": "Merhaba Eren! Sana nasıl yardımcı olabilirim?",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943693,
+    "question": "Senin adın var mı",
+    "answer": "Evet, benim adım Eren.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754943700,
+    "question": "Hayır benim adım eren senin adın gemma",
+    "answer": "Merhaba Eren, benim adım Eren ve adın Gemma.",
+    "intent": null,
+    "source": "llm"
+  },
+  {
+    "ts": 1754944312,
+    "question": "Babalık izni kaç gün?",
+    "answer": "Babalık izni 5 gündür.",
+    "intent": "babalik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754944314,
+    "question": "Çalışma saatleri nedir?",
+    "answer": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır.",
+    "intent": "calisma_saatleri",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754944315,
+    "question": "Doğum izni kaç hafta?",
+    "answer": "Kadın çalışanlar için doğum izni 16 haftadır (8 hafta doğum öncesi, 8 hafta sonrası).",
+    "intent": "dogum_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754944324,
+    "question": "Prim ödemesi alıyor muyum?",
+    "answer": "Prim ödemeleri performansa dayalı yapılır.",
+    "intent": "prim_odemeleri",
+    "source": "llm"
+  },
+  {
+    "ts": 1754944341,
+    "question": "Maaşımı nereden öğrenebilirim?",
+    "answer": "Maaş bilgilerinize İK portalından ulaşabilirsiniz.",
+    "intent": "maas_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754944343,
+    "question": "Evlilik izni kaç gün?",
+    "answer": "Evlilik izni 3 gündür ve evlilik tarihinden itibaren kullanılmalıdır.",
+    "intent": "evlilik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754944343,
+    "question": "Servis var mı?",
+    "answer": "Şirketimizde servis hizmeti bulunmamaktadır. Ulaşım ücreti yol yardımı olarak ödenir.",
+    "intent": "servis_hizmeti",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754944348,
+    "question": "Sigortam ne zaman başlar?",
+    "answer": "Sigortanız işe giriş tarihiniz itibariyle başlar.",
+    "intent": "sigorta_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754944358,
+    "question": "Yemek kartı ne zaman yüklenir?",
+    "answer": "Yemek kartı bakiyesi aylık olarak yüklenir ve dışarıda kullanılabilir.",
+    "intent": "yemek_karti",
+    "source": "llm"
+  },
+  {
+    "ts": 1754944362,
+    "question": "Yıllık izin sürem ne kadar?",
+    "answer": "Yıllık izin süreniz 14 gündür.",
+    "intent": "izin_suresi",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754946052,
+    "question": "Babalık izni kaç gün?",
+    "answer": "Babalık izni 5 gündür.",
+    "intent": "babalik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754946054,
+    "question": "Çalışma saatleri nedir?",
+    "answer": "Çalışma saatlerimiz hafta içi 08:00-17:00 arasındadır.",
+    "intent": "calisma_saatleri",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754946064,
+    "question": "Maaşımı nereden öğrenebilirim?",
+    "answer": "Hesabınızla İK portalına [Portal Linki] yoluyla giriş yapıp ilgili bilgileri kontrol edebilirsiniz.",
+    "intent": "maas_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754946075,
+    "question": "Sigortam ne zaman başlar?",
+    "answer": "Sigortanız işe giriş tarihiniz itibariyle başlar.\n",
+    "intent": "sigorta_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754946081,
+    "question": "Prim ödemesi alıyor muyum?",
+    "answer": "Prim ödemeleri performansa dayalı yapılır.",
+    "intent": "prim_odemeleri",
+    "source": "llm"
+  },
+  {
+    "ts": 1754946088,
+    "question": "Maaşımı nereden öğrenebilirim?",
+    "answer": "Hesabınızla İK portalına [Portal Linki] yoluyla giriş yapıp ilgili bilgileri kontrol edebilirsiniz.",
+    "intent": "maas_bilgisi",
+    "source": "llm"
+  },
+  {
+    "ts": 1754946384,
+    "question": "Babalık izni kaç gün?",
+    "answer": "Babalık izni 5 gündür.",
+    "intent": "babalik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754946390,
+    "question": "Maaşımı nereden öğrenebilirim?",
+    "answer": "Maaş bilgilerinize İK portalından ulaşabilirsiniz.\nİlgili sayfaya [Portal Linki] üzerinden inceleyebilirsiniz.",
+    "intent": "maas_bilgisi",
+    "source": "hybrid"
+  },
+  {
+    "ts": 1754946397,
+    "question": "Prim ödemesi alıyor muyum?",
+    "answer": "Prim ödemeleri performansa dayalı yapılır. Detaylar için İK portalına [Portal Linki] üzerinden ulaşabilirsiniz.",
+    "intent": "prim_odemeleri",
+    "source": "hybrid"
+  },
+  {
+    "ts": 1754946406,
+    "question": "Sigortam ne zaman başlar?",
+    "answer": "Kural Cevabı: Sigortanız işe giriş tarihiniz itibariyle başlar. Kısa yol: İK portalı > Profil > Maaş/İzin bilgileri (erişim: [Portal Linki]).",
+    "intent": "sigorta_bilgisi",
+    "source": "hybrid"
+  },
+  {
+    "ts": 1754946410,
+    "question": "Yıllık izin sürem ne kadar?",
+    "answer": "Yıllık izin süreniz 14 gündür.",
+    "intent": "izin_suresi",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1754946418,
+    "question": "Yemek kartı ne zaman yüklenir?",
+    "answer": "KURAL CEVABI: Yemek kartı bakiyesi aylık olarak yüklenir ve dışarıda kullanılabilir. Detaylar için İK portalına [Portal Linki] üzerinden ulaşabilirsiniz.",
+    "intent": "yemek_karti",
+    "source": "hybrid"
+  },
+  {
+    "ts": 1755761893,
+    "question": "Evlilik izni kaç gün?",
+    "answer": "Evlilik izni 3 gündür ve evlilik tarihinden itibaren kullanılmalıdır.",
+    "intent": "evlilik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1755761897,
+    "question": "Babalık izni kaç gün?",
+    "answer": "Babalık izni 5 gündür.",
+    "intent": "babalik_izni",
+    "source": "rule_based"
+  },
+  {
+    "ts": 1755761900,
+    "question": "Prim ödemesi alıyor muyum?",
+    "answer": "Prim ödemeleri performansa dayalı yapılır. Üzgünüm, şu anda bir teknik sorun yaşıyoruz.",
+    "intent": "prim_odemeleri",
+    "source": "hybrid"
+  },
+  {
+    "ts": 1755761907,
+    "question": "Merhaba",
+    "answer": "Üzgünüm, şu anda bir teknik sorun yaşıyoruz.",
+    "intent": null,
+    "source": "llm"
+  }
+]
